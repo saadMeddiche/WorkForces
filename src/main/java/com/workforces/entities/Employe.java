@@ -8,6 +8,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.validation.Valid;
 
 @Entity
@@ -25,5 +26,8 @@ public class Employe {
     @Valid
     private Salery salery;
 
-    
+    @OneToMany
+    @Valid
+    private Department department;
+
 }
