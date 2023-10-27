@@ -26,18 +26,13 @@ public class Employe {
     @Valid
     private Salery salery;
 
-    @OneToMany
-    @Valid
-    private Department department;
-
     public Employe() {
     }
 
-    public Employe(Long id, FullName fullName, Salery salery, Department department) {
+    public Employe(Long id, FullName fullName, Salery salery) {
         this.id = id;
         this.fullName = fullName;
         this.salery = salery;
-        this.department = department;
     }
 
     public Long getId() {
@@ -64,13 +59,6 @@ public class Employe {
         this.salery = salery;
     }
 
-    public Department getDepartment() {
-        return this.department;
-    }
-
-    public void setDepartment(Department department) {
-        this.department = department;
-    }
 
     public void test() {
         System.out.println("Hi Am an Employe");

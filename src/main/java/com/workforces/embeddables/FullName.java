@@ -14,8 +14,6 @@ public class FullName {
     @Pattern(regexp = "^[^\\s]*$", message = "No Space Allowed")
     private String firstName;
 
-    @NotEmpty(message = "Please enter your Middle Name")
-    @NotNull(message = "Please enter your  Middle Name")
     @Pattern(regexp = "^[^\\s]*$", message = "No Space Allowed")
     private String middleName;
 

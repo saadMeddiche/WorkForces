@@ -5,6 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.workforces.entities.Department;
 import com.workforces.entities.Employe;
+import com.workforces.services.implementations.EmployeService;
 
 public class App {
 
@@ -14,11 +15,14 @@ public class App {
 
         Employe employe = applicationContext.getBean("employe", Employe.class);
         employe.test();
+        System.out.println(employe.getFullName().getFirstName());
 
         Department department = applicationContext.getBean("department", Department.class);
         department.test();
+        System.out.println(department.getDescription());
 
-        Employe employe2 = new Employe();
-        employe2.test();
+        EmployeService employeService = applicationContext.getBean("employeService", EmployeService.class);
+        System.out.println(employeService.toString());
+
     }
 }

@@ -5,12 +5,31 @@
 		https://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<bean id="department" class="com.workforces.entities.Department">
-		<!-- collaborators and configuration for this bean go here -->
+		<constructor-arg value="1"/>
+		<constructor-arg value="Transport"/>
+		<constructor-arg value="Welcome To Depatement Of Transport"/>
+	</bean>
+
+	<bean id="salery" class="com.workforces.embeddables.Salery">
+		<constructor-arg value="1000.0"/>
+		<constructor-arg value="MAD"/>
+	</bean>
+
+	<bean id="fullName" class="com.workforces.embeddables.FullName">
+		<constructor-arg value="Saad"/>
+		<constructor-arg value=""/>
+		<constructor-arg value="Meddiche"/>
 	</bean>
 
 	<bean id="employe" class="com.workforces.entities.Employe">
-		<!-- collaborators and configuration for this bean go here -->
+		<constructor-arg value="1"/>
+		<constructor-arg ref="fullName"/>
+		<constructor-arg ref="salery"/>
 	</bean>
 
+	<bean id="employeService" class="com.workforces.services.implementations.EmployeService">
+		<constructor-arg ref="employe"/>
+		<constructor-arg ref="department"/>
+	</bean>
 
 </beans>
