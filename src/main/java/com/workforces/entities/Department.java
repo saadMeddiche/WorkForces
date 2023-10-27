@@ -6,7 +6,6 @@ import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
-import java.util.Objects;
 
 public class Department {
 
@@ -20,6 +19,7 @@ public class Department {
     private String name;
 
     @NotEmpty(message = "Please enter description of department")
+    @NotNull(message = "Please enter name of department")
     private String description;
 
     public Department() {
@@ -53,6 +53,10 @@ public class Department {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public void test() {
+        System.out.println("Hi Am an Department");
     }
 
 }

@@ -72,4 +72,8 @@ public class Employe {
         this.department = department;
     }
 
+    public void test() {
+        System.out.println("Hi Am an Employe");
+    }
+
 }
