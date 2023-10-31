@@ -1,42 +1,60 @@
 package com.workforces.services.implementations;
 
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import com.workforces.entities.Department;
 import com.workforces.entities.Employe;
-import java.util.Objects;
+import com.workforces.repositories.EmployeRepository;
 
+@Service
 public class EmployeService {
 
     Employe employe;
 
     Department department;
 
+    private EmployeRepository employeRepository;
+
     EmployeService(Employe employe, Department department) {
         this.employe = employe;
         this.department = department;
     }
 
-    public void addEmploye(Employe Employe) {
+    @Autowired
+    public EmployeService(EmployeRepository employeRepository) {
+        this.employeRepository = employeRepository;
+    }
+
+    public List<Employe> getAllEmployees() {
+        return employeRepository.findAll();
+    }
+
+    public Optional<Employe> getEmployeeById(Long id) {
+        return employeRepository.findById(id);
+    }
+
+    @Transactional
+    public Employe updateEmployee(Employe employee) {
+        return employeRepository.save(employee);
 
     }
 
-    public void updateEmploye(Employe Employe) {
-
+    @Transactional
+    public void deleteEmployee(Long id) {
+        employeRepository.deleteById(id);
     }
 
-    public Employe getEmploye() {
-        return this.employe;
-    }
-
-    public Department getDepartment() {
-        return this.department;
-    }
-
-    @Override
-    public String toString() {
-        return "{" +
-                " employe='" + getEmploye().getFullName().getFirstName() + "'" +
-                ", department='" + getDepartment().getDescription() + "'" +
-                "}";
-    }
+    // @Override
+    // public String toString() {
+    // return "{" +
+    // " employe='" + getEmploye().getFullName().getFirstName() + "'" +
+    // ", department='" + getDepartment().getDescription() + "'" +
+    // "}";
+    // }
 
 }

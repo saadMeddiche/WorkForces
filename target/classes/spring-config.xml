@@ -4,6 +4,8 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 		https://www.springframework.org/schema/beans/spring-beans.xsd">
 
+	<import resource="DataSource.xml" />
+
 	<bean id="department" class="com.workforces.entities.Department">
 		<constructor-arg value="1"/>
 		<constructor-arg value="Transport"/>
