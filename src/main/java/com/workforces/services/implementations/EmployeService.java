@@ -18,19 +18,15 @@ public class EmployeService {
 
     Department department;
 
+    @Autowired
     private EmployeRepository employeRepository;
 
-    EmployeService(Employe employe, Department department) {
+    public EmployeService(Employe employe, Department department) {
         this.employe = employe;
         this.department = department;
     }
 
-    @Autowired
-    public EmployeService(EmployeRepository employeRepository) {
-        this.employeRepository = employeRepository;
-    }
-
-    public List<Employe> getAllEmployees() {
+    public Iterable<Employe> getAllEmployees() {
         return employeRepository.findAll();
     }
 
@@ -41,7 +37,6 @@ public class EmployeService {
     @Transactional
     public Employe updateEmployee(Employe employee) {
         return employeRepository.save(employee);
-
     }
 
     @Transactional
@@ -49,12 +44,12 @@ public class EmployeService {
         employeRepository.deleteById(id);
     }
 
-    // @Override
-    // public String toString() {
-    // return "{" +
-    // " employe='" + getEmploye().getFullName().getFirstName() + "'" +
-    // ", department='" + getDepartment().getDescription() + "'" +
-    // "}";
-    // }
+    @Override
+    public String toString() {
+        return "{" +
+                " employe='" + employe.getFullName().getFirstName() + "'" +
+                ", department='" + department.getDescription() + "'" +
+                "}";
+    }
 
 }

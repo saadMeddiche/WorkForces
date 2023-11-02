@@ -1,1 +1,9 @@
+com\workforces\embeddables\FullName.class
+com\workforces\App.class
+com\workforces\configurations\ConfigurationOfJpa.class
 com\workforces\entities\Department.class
+com\workforces\entities\Employe.class
+com\workforces\embeddables\Salery.class
+com\workforces\configurations\AppConfig.class
+com\workforces\repositories\EmployeRepository.class
+com\workforces\services\implementations\EmployeService.class
