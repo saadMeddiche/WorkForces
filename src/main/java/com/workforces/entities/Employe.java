@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.Valid;
+import java.util.Objects;
 
 @Entity
 public class Employe {
@@ -58,9 +59,17 @@ public class Employe {
         this.salery = salery;
     }
 
-
     public void test() {
         System.out.println("Hi Am an Employe");
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+                " id='" + getId() + "'" +
+                ", fullName='" + getFullName() + "'" +
+                ", salery='" + getSalery() + "'" +
+                "}";
     }
 
 }

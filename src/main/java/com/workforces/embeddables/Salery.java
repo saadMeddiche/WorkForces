@@ -5,6 +5,7 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.PositiveOrZero;
+import java.util.Objects;
 
 @Embeddable
 public class Salery {
@@ -18,6 +19,9 @@ public class Salery {
     @NotNull(message = "Please enter then currency")
     @Pattern(regexp = "^[^\\s]*$", message = "No Space Allowed")
     private String currency;
+
+    public Salery() {
+    }
 
     public Salery(Double value) {
         this.value = value;
@@ -43,6 +47,14 @@ public class Salery {
 
     public void setCurrency(String currency) {
         this.currency = currency;
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+                " value='" + getValue() + "'" +
+                ", currency='" + getCurrency() + "'" +
+                "}";
     }
 
 }

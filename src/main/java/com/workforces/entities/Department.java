@@ -7,6 +7,7 @@ import javax.persistence.Id;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
+import java.util.Objects;
 
 @Entity
 public class Department {
@@ -59,6 +60,15 @@ public class Department {
 
     public void test() {
         System.out.println("Hi Am an Department");
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+                " id='" + getId() + "'" +
+                ", name='" + getName() + "'" +
+                ", description='" + getDescription() + "'" +
+                "}";
     }
 
 }

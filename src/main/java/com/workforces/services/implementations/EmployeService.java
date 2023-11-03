@@ -18,17 +18,16 @@ public class EmployeService {
 
     Department department;
 
-    
     private EmployeRepository employeRepository;
-
-    @Autowired
-    public EmployeService(EmployeRepository employeRepository) {
-        this.employeRepository = employeRepository;
-    }
 
     public EmployeService(Employe employe, Department department) {
         this.employe = employe;
         this.department = department;
+    }
+
+    @Autowired
+    public EmployeService(EmployeRepository employeRepository) {
+        this.employeRepository = employeRepository;
     }
 
     public Iterable<Employe> getAllEmployees() {

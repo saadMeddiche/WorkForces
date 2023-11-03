@@ -5,6 +5,7 @@ import jakarta.persistence.Embeddable;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
+import java.util.Objects;
 
 @Embeddable
 public class FullName {
@@ -55,4 +56,12 @@ public class FullName {
         this.lastName = lastName;
     }
 
+    @Override
+    public String toString() {
+        return "{" +
+                " firstName='" + getFirstName() + "'" +
+                ", middleName='" + getMiddleName() + "'" +
+                ", lastName='" + getLastName() + "'" +
+                "}";
+    }
 }
