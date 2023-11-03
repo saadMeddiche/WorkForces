@@ -18,8 +18,13 @@ public class EmployeService {
 
     Department department;
 
-    @Autowired
+    
     private EmployeRepository employeRepository;
+
+    @Autowired
+    public EmployeService(EmployeRepository employeRepository) {
+        this.employeRepository = employeRepository;
+    }
 
     public EmployeService(Employe employe, Department department) {
         this.employe = employe;

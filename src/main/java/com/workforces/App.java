@@ -33,7 +33,7 @@ public class App {
             EmployeService employeService = applicationContext.getBean("employeService", EmployeService.class);
             System.out.println(employeService.toString());
 
-            // employeService.updateEmployee(employe);
+            employeService.updateEmployee(employe);
         }
 
     }

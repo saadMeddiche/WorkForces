@@ -3,12 +3,12 @@ package com.workforces.entities;
 import com.workforces.embeddables.FullName;
 import com.workforces.embeddables.Salery;
 
-import jakarta.persistence.Embedded;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.validation.Valid;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.GenerationType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.validation.Valid;
 
 @Entity
 public class Employe {
