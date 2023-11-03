@@ -37,14 +37,51 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.sprin
 		<constructor-arg ref="department"/>
 	</bean>
 
-	<!-- <bean id="employeServiceWithRepository" class="com.workforces.services.implementations.EmployeService">
-		<constructor-arg ref="employeRepository"/>
-	</bean> -->
-	
-	<!-- <jpa:repositories base-package="com.workforces.repositories"/>
 
-    <context:component-scan base-package="com.workforces.repositories">
-        <context:include-filter type="annotation" expression="org.springframework.stereotype.Repository" />
-    </context:component-scan> -->
+
+    <!--    dataSource pour definier les infos de la DB -->
+    <!-- <bean name="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="url" value="jdbc:mysql://localhost:3306/workforces?createDatabaseIfNotExist=true" />
+        <property name="username" value="root" />
+        <property name="password" value="" />
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
+    </bean> -->
+
+    <!--    EntityManagerFactory pour gérer la persistance des entités -->
+    <!-- <bean name="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="packagesToScan" value="org.workforces.entities" />
+        <property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
+        </property>
+        <property name="jpaProperties">
+            <props>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+            </props>
+        </property>
+    </bean> -->
+
+    <!-- <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory" />
+    </bean>
+
+    <tx:annotation-driven />
+
+    <bean id="persistenceExceptionTranslationPostProcessor" class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" /> -->
+
+	<!-- Enable component scanning for your service and repository packages -->
+    <!-- <context:component-scan base-package="com.workforces.services.implementations, com.workforces.repositories" /> -->
+
+    <!-- Define your JPA repository bean -->
+    <!-- <bean id="employeRepository" class="org.springframework.data.jpa.repository.support.SimpleJpaRepository">
+        <constructor-arg name="domainClass" value="com.workforces.entities.Employe" />
+        <constructor-arg name="em" ref="entityManagerFactory" />
+    </bean> -->
+
+    <!-- Define your service bean and inject the repository -->
+    <!-- <bean id="employeServiceWithRepository" class="com.workforces.services.implementations.EmployeService">
+        <property name="employeRepository" ref="employeRepository" />
+    </bean> -->
 	
 </beans>

@@ -16,6 +16,8 @@ public class App {
 
     public static void main(String[] args) {
 
+        // test();
+
         System.out.println("========Dependencie Injection of Employe and Department in EmployeService========");
         dependencieInjectionOfEmployeAndDepartmentInEmployeService();
 
