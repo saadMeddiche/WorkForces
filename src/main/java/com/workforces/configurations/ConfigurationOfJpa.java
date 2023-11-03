@@ -32,7 +32,7 @@ public class ConfigurationOfJpa {
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource());
-        em.setPackagesToScan("com.workforces.entities");
+        em.setPackagesToScan("com.workforces.domain");
         em.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
         em.getJpaPropertyMap().put("hibernate.hbm2ddl.auto", "update");
         em.getJpaPropertyMap().put("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");

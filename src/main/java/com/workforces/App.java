@@ -17,8 +17,8 @@ public class App {
 
     public static void main(String[] args) {
 
-        // try (AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(
-        //         ConfigurationOfJpa.class)) {
+        try (AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(
+                ConfigurationOfJpa.class)) {
                     
             ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-config.xml");
 
@@ -33,8 +33,8 @@ public class App {
             EmployeService employeService = applicationContext.getBean("employeService", EmployeService.class);
             System.out.println(employeService.toString());
 
-            employeService.updateEmployee(employe);
-        // }
+            // employeService.updateEmployee(employe);
+        }
 
     }
 }
